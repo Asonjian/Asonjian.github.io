@@ -14,7 +14,7 @@
 <meta property="og:description" content="编辑时间列表    Num Time author Notes    1 2023.2.15 安健 根据目前所进行的发票获取程序进行的知识整理，基本的webdriver以及selenium的使用   1.WebDriver 安装使用1.1 下载驱动MircrosoftWebDriver.exe下载地址： https:&#x2F;&#x2F;developer.microsoft.com&#x2F;en-us&#x2F;microsoft">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-15T06:55:56.806Z">
-<meta property="article:modified_time" content="2023-02-15T06:39:59.592Z">
+<meta property="article:modified_time" content="2023-02-15T08:01:36.019Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -115,13 +115,13 @@
 <h2 id="1-WebDriver-安装使用"><a href="#1-WebDriver-安装使用" class="headerlink" title="1.WebDriver 安装使用"></a>1.WebDriver 安装使用</h2><h3 id="1-1-下载驱动MircrosoftWebDriver-exe"><a href="#1-1-下载驱动MircrosoftWebDriver-exe" class="headerlink" title="1.1 下载驱动MircrosoftWebDriver.exe"></a>1.1 下载驱动MircrosoftWebDriver.exe</h3><p>下载地址： <a target="_blank" rel="noopener" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a><br>根据自己电脑的操作系统版本或浏览器版本选择对应的驱动版本。<br>浏览器版本查看需要在设置中的关于Microsoft中查看。</p>
 <p>链接: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Windows</a></p>
 <h3 id="1-2-WebDriver-使用"><a href="#1-2-WebDriver-使用" class="headerlink" title="1.2 WebDriver 使用"></a>1.2 WebDriver 使用</h3><p>首先将下载后的文件重命名为 MicrosoftWebDriver.exe，用于在python中直接引用。<br>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Edge()</span><br><span class="line">browser.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">browser.quit()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Edge()</span><br><span class="line">browser.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>
 
 <p>根据代码文件的位置可放置在当前文件夹下，也可以放在其他文件夹再进行引用。<br>例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Edge(executable_path=<span class="string">&#x27;C:\Users\an185\Desktop\MicrosoftWebDriver.exe&#x27;</span>)</span><br><span class="line">browser.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>
 
 <p>MicrosoftWebDriver更多使用: <a target="_blank" rel="noopener" href="https://blog.csdn.net/XianZhe_/article/details/120929106">webdriver.Edge()参数实例</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">webdriver.Edge(executable_path=‘MicrosoftWebDriver.exe’, capabilities=<span class="literal">None</span>, port=<span class="number">0</span>, verbose=<span class="literal">False</span>, service_log_path=<span class="literal">None</span>, log_path=<span class="literal">None</span>, keep_alive=<span class="literal">False</span>)  </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webdriver.Edge(executable_path=‘MicrosoftWebDriver.exe’, capabilities=<span class="literal">None</span>, port=<span class="number">0</span>, verbose=<span class="literal">False</span>, service_log_path=<span class="literal">None</span>, log_path=<span class="literal">None</span>, keep_alive=<span class="literal">False</span>)  </span><br></pre></td></tr></table></figure>
 
 <p>参数如下：  </p>
 <ul>
@@ -135,8 +135,11 @@
 </ul>
 <h2 id="2-Selenium-模块安装使用"><a href="#2-Selenium-模块安装使用" class="headerlink" title="2.Selenium 模块安装使用"></a>2.Selenium 模块安装使用</h2><h3 id="2-1-模块安装"><a href="#2-1-模块安装" class="headerlink" title="2.1 模块安装"></a>2.1 模块安装</h3><p>使用pip install selenium 或者直接在pycharm中选择安装包安装</p>
 <h3 id="2-2-模块使用"><a href="#2-2-模块使用" class="headerlink" title="2.2 模块使用"></a>2.2 模块使用</h3><h4 id="2-2-1-模块测试"><a href="#2-2-1-模块测试" class="headerlink" title="2.2.1 模块测试"></a>2.2.1 模块测试</h4><p>验证是否成功：<br>执行代码后无报错，则驱动安装成功：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Edge()</span><br><span class="line">driver.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">driver.quit()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="2-2-1-定位方法"><a href="#2-2-1-定位方法" class="headerlink" title="2.2.1 定位方法"></a>2.2.1 定位方法</h4><p><strong>id定位</strong><br>定位属性中带有 id 属性的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> Edge</span><br><span class="line">driver = Edge()</span><br><span class="line">driver.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-1-定位方法"><a href="#2-2-1-定位方法" class="headerlink" title="2.2.1 定位方法"></a>2.2.1 定位方法</h4><p>在python3.11中，方法改为了drive.find_element()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_element</span>(<span class="params">self,</span></span><br><span class="line"><span class="params">                 by: <span class="built_in">str</span> = By.ID,</span></span><br><span class="line"><span class="params">                 value: <span class="built_in">str</span> | <span class="literal">None</span> = <span class="literal">None</span></span>) -&gt; WebElement</span><br></pre></td></tr></table></figure>
+
+<p><strong>id定位</strong><br>定位属性中带有 id 属性的元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">input</span> <span class="built_in">id</span>=<span class="string">&#x27;kw&#x27;</span> &gt;</span><br><span class="line">driver.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>name定位</strong><br>定位属性中带有 name 属性的元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">input</span> name=<span class="string">&#x27;kw1&#x27;</span> &gt;</span><br><span class="line">driver.find_element_by_name(<span class="string">&#x27;kw1&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -181,6 +184,15 @@
     
 <nav id="article-nav">
   
+    <a href="/2023/02/15/Image_Process/Add_Str(python)/Add_Str_to%20Img/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Add_Str_To_Img
+        
+      </div>
+    </a>
+  
   
     <a href="/2023/02/15/Git_Test/test/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
@@ -220,6 +232,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/02/15/Image_Process/Add_Str(python)/Add_Str_to%20Img/">Add_Str_To_Img</a>
+          </li>
         
           <li>
             <a href="/2023/02/15/Python_Study/Crawl/Slenium_Study/Selenium/">Python-Selenium</a>
