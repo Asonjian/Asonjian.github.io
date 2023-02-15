@@ -71,6 +71,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python学习/word操作/word" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/word%E6%93%8D%E4%BD%9C/word/" class="article-date">
+  <time class="dt-published" datetime="2023-02-15T10:55:29.192Z" itemprop="datePublished">2023-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/word%E6%93%8D%E4%BD%9C/word/">Python-Word操作学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><em><strong>编辑时间列表</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>Time</th>
+<th>author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2023.2.15</td>
+<td>安健</td>
+<td>None</td>
+</tr>
+</tbody></table>
+<h1 id="Word基本操作"><a href="#Word基本操作" class="headerlink" title="Word基本操作"></a>Word基本操作</h1><blockquote>
+<p>python-docx 不支持 doc 文档，一定要注意该点，如果使用 doc 文档，需要提前将其用 Word 相关软件转换为 docx 格式。 doc 和 docx 是存在本质差异的，一个是二进制，另一个 XML 格式的文件。<br>模块的安装 pip install python-docx 。</p>
+</blockquote>
+<p>官方手册：<a target="_blank" rel="noopener" href="https://python-docx.readthedocs.io/en/latest/index.html">https://python-docx.readthedocs.io/en/latest/index.html</a><br>pypi 官方地址：<a target="_blank" rel="noopener" href="https://pypi.org/project/python-docx/">https://pypi.org/project/python-docx/</a><br>资料准备完毕，即可进入编码环节。</p>
+<h2 id="创建文档"><a href="#创建文档" class="headerlink" title="创建文档"></a>创建文档</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> docx <span class="keyword">import</span> Document</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 Document 对象，等价于在电脑上打开一个 Word 文档</span></span><br><span class="line">document = Document()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存文档</span></span><br><span class="line">document.save(<span class="string">&#x27;demo.docx&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>Document 对象具备的方法如下所示：</strong></p>
+<ol>
+<li>&#x3D;&#x3D;add_heading(self, text&#x3D;’’, level&#x3D;1)&#x3D;&#x3D;：添加标题；</li>
+<li>add_page_break(self)：分页符；</li>
+<li>add_paragraph(self, text&#x3D;’’, style&#x3D;None)：添加段落；</li>
+<li>add_picture(self, image_path_or_stream, width&#x3D;None, height&#x3D;None)：添加图片；</li>
+<li>add_section(self, start_type&#x3D;2)：添加节；</li>
+<li>add_table(self, rows, cols, style&#x3D;None)：添加表格；</li>
+</ol>
+<h2 id="写入标题"><a href="#写入标题" class="headerlink" title="写入标题"></a>写入标题</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> docx <span class="keyword">import</span> Document</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 Document 对象，等价于在电脑上打开一个 Word 文档</span></span><br><span class="line">document = Document()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Word 文档中添加一个标题</span></span><br><span class="line">document.add_heading(<span class="string">&#x27;这是一个标题&#x27;</span>,level=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存文档</span></span><br><span class="line">document.save(<span class="string">&#x27;demo.docx&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="添加文字段落"><a href="#添加文字段落" class="headerlink" title="添加文字段落"></a>添加文字段落</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> docx <span class="keyword">import</span> Document</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 Document 对象，等价于在电脑上打开一个 Word 文档</span></span><br><span class="line">document = Document()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Word 文档中添加一个标题</span></span><br><span class="line">document.add_heading(<span class="string">&#x27;这是一个标题&#x27;</span>, level=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文档添加段落</span></span><br><span class="line">p = document.add_paragraph(<span class="string">&#x27;这是白给的段落&#x27;</span>)</span><br><span class="line"><span class="comment"># 添加带样式的文字</span></span><br><span class="line"><span class="comment"># 添加段落，文本可以包含制表符（\t）、换行符（\n）或回车符（\r）等</span></span><br><span class="line"><span class="comment"># add_run() 在段落后面追加文本</span></span><br><span class="line">p.add_run(<span class="string">&#x27;\n我倾斜了&#x27;</span>).italic = <span class="literal">True</span>  <span class="comment"># 添加一个倾斜文字</span></span><br><span class="line">p.add_run(<span class="string">&#x27;\n我加粗了&#x27;</span>).bold = <span class="literal">True</span>  <span class="comment"># 添加一个加粗文字</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存文档</span></span><br><span class="line">document.save(<span class="string">&#x27;demo.docx&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="添加列表"><a href="#添加列表" class="headerlink" title="添加列表"></a>添加列表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#无序列表的添加</span></span><br><span class="line"><span class="comment"># 添加列表（前面一个小圆点）</span></span><br><span class="line">document.add_paragraph(<span class="string">&#x27;我前面是小圆点&#x27;</span>, style=<span class="string">&#x27;List Bullet&#x27;</span>)</span><br><span class="line"><span class="comment"># 添加列表（前面一个小圆点）</span></span><br><span class="line">document.add_paragraph(<span class="string">&#x27;第二个小圆点&#x27;</span>, style=<span class="string">&#x27;List Bullet&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#有序列表的添加</span></span><br><span class="line"><span class="comment"># 添加列表（前面数字）</span></span><br><span class="line">document.add_paragraph(<span class="string">&#x27;我前面是数字&#x27;</span>, style=<span class="string">&#x27;List Number&#x27;</span>)</span><br><span class="line"><span class="comment"># 添加列表（前面数字）</span></span><br><span class="line">document.add_paragraph(<span class="string">&#x27;第二个数字&#x27;</span>, style=<span class="string">&#x27;List Number&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.add_picture(<span class="string">r&quot;../9.png&quot;</span>, width=Inches(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p><em><strong>图片其他操作，插入图片、删除图片、设置图片大小、提取图片</strong></em> <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39147299/article/details/125544621">https://blog.csdn.net/qq_39147299/article/details/125544621</a></p>
+<p><em><strong>add_picture()</strong></em> 函数中参数 <em><strong>image_path_or_stream</strong></em> 可以为相对地址或者绝对地址，也可以是一个图片数据流，上述代码中 <em>Inches</em> 表示英寸，除此之外， <em>python-docx</em> 还提供了厘米 （Cm） ，如设置 1厘米： Cm(1) ，使用的时候需要提前导入 <em><strong>from docx.shared import Inches</strong></em>, cm 。</p>
+<h2 id="添加表格"><a href="#添加表格" class="headerlink" title="添加表格"></a>添加表格</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">p1 = document.add_paragraph(<span class="string">&#x27;新页新段落&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个 2×2 表格</span></span><br><span class="line">table = document.add_table(rows=<span class="number">2</span>, cols=<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 获取第1行第2列单元格</span></span><br><span class="line">cell = table.cell(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置单元格文本</span></span><br><span class="line">cell.text = <span class="string">&#x27;第1行第2列&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取第2行</span></span><br><span class="line">row = table.rows[<span class="number">1</span>]</span><br><span class="line">row.cells[<span class="number">0</span>].text = <span class="string">&#x27;橡皮擦&#x27;</span></span><br><span class="line">row.cells[<span class="number">1</span>].text = <span class="string">&#x27;乔喻&#x27;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/15/python%E5%AD%A6%E4%B9%A0/word%E6%93%8D%E4%BD%9C/word/" data-id="cle5l5ee000003ovihj22ekmw" data-title="Python-Word操作学习" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-图像处理/图像加文本(python实现)/Add_Str_to Img" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/02/15/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F%E5%8A%A0%E6%96%87%E6%9C%AC(python%E5%AE%9E%E7%8E%B0)/Add_Str_to%20Img/" class="article-date">
@@ -281,6 +357,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/word%E6%93%8D%E4%BD%9C/word/">Python-Word操作学习</a>
+          </li>
         
           <li>
             <a href="/2023/02/15/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F%E5%8A%A0%E6%96%87%E6%9C%AC(python%E5%AE%9E%E7%8E%B0)/Add_Str_to%20Img/">图片添加文本</a>
