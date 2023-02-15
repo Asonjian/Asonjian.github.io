@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Python-Selenium | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="编辑时间列表    Num Time author Notes    1 2023.2.15 安健 根据目前所进行的发票获取程序进行的知识整理，基本的webdriver以及selenium的使用   1.WebDriver 安装使用1.1 下载驱动MircrosoftWebDriver.exe下载地址： https:&#x2F;&#x2F;developer.microsoft.com&#x2F;en-us&#x2F;microsoft">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-Selenium">
+<meta property="og:url" content="http://example.com/2023/02/15/Python_Study/Crawl/Slenium_Study/Selenium/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="编辑时间列表    Num Time author Notes    1 2023.2.15 安健 根据目前所进行的发票获取程序进行的知识整理，基本的webdriver以及selenium的使用   1.WebDriver 安装使用1.1 下载驱动MircrosoftWebDriver.exe下载地址： https:&#x2F;&#x2F;developer.microsoft.com&#x2F;en-us&#x2F;microsoft">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-15T06:55:56.806Z">
+<meta property="article:modified_time" content="2023-02-15T06:39:59.592Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Python_Study/Crawl/Slenium_Study/Selenium" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/15/Python_Study/Crawl/Slenium_Study/Selenium/" class="article-date">
+  <time class="dt-published" datetime="2023-02-15T06:55:56.806Z" itemprop="datePublished">2023-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Python-Selenium
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><em><strong>编辑时间列表</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>Time</th>
+<th>author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2023.2.15</td>
+<td>安健</td>
+<td>根据目前所进行的发票获取程序进行的知识整理，基本的webdriver以及selenium的使用</td>
+</tr>
+</tbody></table>
+<h2 id="1-WebDriver-安装使用"><a href="#1-WebDriver-安装使用" class="headerlink" title="1.WebDriver 安装使用"></a>1.WebDriver 安装使用</h2><h3 id="1-1-下载驱动MircrosoftWebDriver-exe"><a href="#1-1-下载驱动MircrosoftWebDriver-exe" class="headerlink" title="1.1 下载驱动MircrosoftWebDriver.exe"></a>1.1 下载驱动MircrosoftWebDriver.exe</h3><p>下载地址： <a target="_blank" rel="noopener" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a><br>根据自己电脑的操作系统版本或浏览器版本选择对应的驱动版本。<br>浏览器版本查看需要在设置中的关于Microsoft中查看。</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Windows</a></p>
+<h3 id="1-2-WebDriver-使用"><a href="#1-2-WebDriver-使用" class="headerlink" title="1.2 WebDriver 使用"></a>1.2 WebDriver 使用</h3><p>首先将下载后的文件重命名为 MicrosoftWebDriver.exe，用于在python中直接引用。<br>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Edge()</span><br><span class="line">browser.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">browser.quit()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>根据代码文件的位置可放置在当前文件夹下，也可以放在其他文件夹再进行引用。<br>例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Edge(executable_path=<span class="string">&#x27;C:\Users\an185\Desktop\MicrosoftWebDriver.exe&#x27;</span>)</span><br><span class="line">browser.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>
+
+<p>MicrosoftWebDriver更多使用: <a target="_blank" rel="noopener" href="https://blog.csdn.net/XianZhe_/article/details/120929106">webdriver.Edge()参数实例</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">webdriver.Edge(executable_path=‘MicrosoftWebDriver.exe’, capabilities=<span class="literal">None</span>, port=<span class="number">0</span>, verbose=<span class="literal">False</span>, service_log_path=<span class="literal">None</span>, log_path=<span class="literal">None</span>, keep_alive=<span class="literal">False</span>)  </span><br></pre></td></tr></table></figure>
+
+<p>参数如下：  </p>
+<ul>
+<li>executable_path：浏览器驱动程序路径，如果没有制定，则默认使用环境变量PATH中设置的路径</li>
+<li>capabilities：非浏览器特定的字典对象，传入浏览器启动参数时需要使用到</li>
+<li>port：驱动程序启用的端口号，如果不填写，则自动使用任意闲置的端口号，默认参数为0</li>
+<li>verbose：是否在服务中设置详细日志记录</li>
+<li>service_log_path：驱动程序存放日志文件的位置</li>
+<li>log_path：不推荐使用的 service_log_path 参数</li>
+<li>keep_alive：表示在与 EdgeDriver 进行链接时，是否带上 HTTP 请求头Connection: keep-alive，既是否使用长链接，布尔类型参数，默认值为True</li>
+</ul>
+<h2 id="2-Selenium-模块安装使用"><a href="#2-Selenium-模块安装使用" class="headerlink" title="2.Selenium 模块安装使用"></a>2.Selenium 模块安装使用</h2><h3 id="2-1-模块安装"><a href="#2-1-模块安装" class="headerlink" title="2.1 模块安装"></a>2.1 模块安装</h3><p>使用pip install selenium 或者直接在pycharm中选择安装包安装</p>
+<h3 id="2-2-模块使用"><a href="#2-2-模块使用" class="headerlink" title="2.2 模块使用"></a>2.2 模块使用</h3><h4 id="2-2-1-模块测试"><a href="#2-2-1-模块测试" class="headerlink" title="2.2.1 模块测试"></a>2.2.1 模块测试</h4><p>验证是否成功：<br>执行代码后无报错，则驱动安装成功：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Edge()</span><br><span class="line">driver.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">driver.quit()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="2-2-1-定位方法"><a href="#2-2-1-定位方法" class="headerlink" title="2.2.1 定位方法"></a>2.2.1 定位方法</h4><p><strong>id定位</strong><br>定位属性中带有 id 属性的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">input</span> <span class="built_in">id</span>=<span class="string">&#x27;kw&#x27;</span> &gt;</span><br><span class="line">driver.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>name定位</strong><br>定位属性中带有 name 属性的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">input</span> name=<span class="string">&#x27;kw1&#x27;</span> &gt;</span><br><span class="line">driver.find_element_by_name(<span class="string">&#x27;kw1&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>tag name 定位</strong><br><em>注意： 一般页面上标签一样的很多，通过标签无法直接定位到某个元素。通常用于定位一组元素</em><br>定位页面上的标签，一般情况标签都会重复(不推荐)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">input</span> name=<span class="string">&#x27;kw1&#x27;</span> &gt;</span><br><span class="line">driver.find_element_by_tag_name(<span class="string">&#x27;input&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>link定位 | partial link定位</strong><br>定位标签中带有文本内容的  </p>
+<p>partial link 可以模糊匹配</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;http://news.baidu.com&quot;</span> target=<span class="string">&quot;_blank&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;mnav&quot;</span>&gt;新闻&lt;/a&gt;</span><br><span class="line">driver.find_element_by_link_text(<span class="string">&#x27;新闻&#x27;</span>)</span><br><span class="line">driver.find_element_by_partial_link_text(<span class="string">&#x27;新&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>xpath 定位</strong><br>定位标签中带有class属性的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a <span class="keyword">class</span>=<span class="string">&#x27;na&#x27;</span> name=<span class="string">&#x27;kw1&#x27;</span>&gt;新闻 &lt;/a&gt;</span><br><span class="line">driver.find_element_by_class_name(<span class="string">&#x27;na&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>xpath 定位</strong><br>XPath 是一种在XML 文档中定位元素的语言。</p>
+<p>&#x2F;&#x2F; 表示当前页面某个目录下，input 表示定位元素的标签名，[@id&#x3D;‘kw’] 表示这个元素的id 属性值等于kw；如果不想指定标签名也可以用星号（*）代替， . 表示当前节点。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Firefox()</span><br><span class="line">url = <span class="string">&quot;http://www.baidu.com/&quot;</span></span><br><span class="line">driver.get(url)</span><br><span class="line">driver.find_element_by_xpath(<span class="string">&quot;//input[@id=&#x27;kw&#x27;]&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>剩余的css定位，复数定位，select 模块专门定位方法等方式暂不列举。</p>
+<h4 id="2-2-2-操作事件"><a href="#2-2-2-操作事件" class="headerlink" title="2.2.2 操作事件"></a>2.2.2 操作事件</h4><ul>
+<li>输入框输入 send_keys<br><em><strong>注意： send_keys输入中文时，需要在字符串前面加 u （unicode编码）</strong></em><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_xpath(<span class="string">&quot;//*[@id=&#x27;nr&#x27;]/option[2]&quot;</span>).send_keys(<span class="string">&#x27;内容&#x27;</span>)</span><br><span class="line">driver.find_element_by_xpath(<span class="string">&quot;//*[@id=&#x27;nr&#x27;]/option[2]&quot;</span>).click()</span><br><span class="line">driver.find_element_by_xpath(<span class="string">&quot;//*[@id=&#x27;nr&#x27;]/option[2]&quot;</span>).clear()</span><br><span class="line">driver.find_element_by_xpath(<span class="string">&quot;//*[@id=&#x27;nr&#x27;]/option[2]&quot;</span>).submit()</span><br></pre></td></tr></table></figure></li>
+<li>鼠标点击 click</li>
+<li>清空输入框 clear</li>
+<li>回车 submit</li>
+</ul>
+<h4 id="2-2-2-页面截图"><a href="#2-2-2-页面截图" class="headerlink" title="2.2.2 页面截图"></a>2.2.2 页面截图</h4><ol>
+<li>get_screenshot_as_file(self, filename)<br>获取当前window的截图，出现IOError时候返回False,截图成功返回True。当filename参数是文件名时，文件保存路径同脚本路径。</li>
+<li>save_screenshot(self)<br>根据源码，save_screenshot方法是调用的 get_screenshot_as_file方法，以下是源码：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_screenshot_as_file</span>(<span class="params">self, filename</span>):        </span><br><span class="line">        png = self.get_screenshot_as_png()</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                f.write(png)</span><br><span class="line">        <span class="keyword">except</span> IOError:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">finally</span>:</span><br><span class="line">            <span class="keyword">del</span> png</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    save_screenshot = get_screenshot_as_file</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>get_screenshot_as_base64(self)<br>获取屏幕截图，保存的是base64的编码格式，在HTML界面输出截图的时候，会用到。<br>比如，想把截图放到html测试报告里。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.get_screenshot_as_base64()</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>get_screenshot_as_png(self)<br>获取屏幕截图，保存的是二进制数据，很少用到。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get_screenshot_as_png()</span><br></pre></td></tr></table></figure></li>
+<li>获取页面的宽度和高度   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">width = driver.execute_script(<span class="string">&quot;return document.documentElement.scrollWidth&quot;</span>)</span><br><span class="line">height = driver.execute_script(<span class="string">&quot;return document.documentElement.scrollHeight&quot;</span>)</span><br><span class="line">driver.set_window_size(width, height) <span class="comment"># 设置窗口大小</span></span><br></pre></td></tr></table></figure></li>
+<li>获取元素的宽度和高度<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ele = self.findElement(location)   <span class="comment"># 定位元素</span></span><br><span class="line">left = ele.location[<span class="string">&#x27;x&#x27;</span>]</span><br><span class="line">top = ele.location[<span class="string">&#x27;y&#x27;</span>]</span><br><span class="line">high = ele.location[<span class="string">&#x27;x&#x27;</span>] + ele.size[<span class="string">&#x27;width&#x27;</span>]  <span class="comment"># 高度</span></span><br><span class="line">wide = ele.location[<span class="string">&#x27;y&#x27;</span>] + ele.size[<span class="string">&#x27;height&#x27;</span>] <span class="comment"># 宽度</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-3-selenium无头模式"><a href="#2-3-selenium无头模式" class="headerlink" title="2.3 selenium无头模式"></a>2.3 selenium无头模式</h3><p>需要安装一个包：pip install msedge-selenium-tools</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> msedge.selenium_tools <span class="keyword">import</span> Edge, EdgeOptions</span><br><span class="line"></span><br><span class="line">options = EdgeOptions()</span><br><span class="line">options.use_chromium = <span class="literal">True</span></span><br><span class="line">options.add_argument(<span class="string">&#x27;headless&#x27;</span>)</span><br><span class="line">browser = Edge(options=options)</span><br><span class="line">browser.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/15/Python_Study/Crawl/Slenium_Study/Selenium/" data-id="cle5blzkz0001u8vi30fv7jpw" data-title="Python-Selenium" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/02/15/Git_Test/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2023.2.15_Connect_Test</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/15/Python_Study/Crawl/Slenium_Study/Selenium/">Python-Selenium</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/15/Git_Test/test/">2023.2.15_Connect_Test</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
