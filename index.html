@@ -71,9 +71,93 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-python学习/excelc操作/excel_study" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Matlab_study/Smulink建模与仿真/Simulink" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excelc%E6%93%8D%E4%BD%9C/excel_study/" class="article-date">
+    <a href="/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/" class="article-date">
+  <time class="dt-published" datetime="2023-02-18T07:18:54.609Z" itemprop="datePublished">2023-02-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/">Simulink仿真与建模学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><em><strong>编辑时间列表</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>Time</th>
+<th>author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2023.2.18</td>
+<td>安健</td>
+<td>None</td>
+</tr>
+</tbody></table>
+<h2 id="建模与仿真的流程"><a href="#建模与仿真的流程" class="headerlink" title="建模与仿真的流程"></a>建模与仿真的流程</h2><ol>
+<li>分析数学模型</li>
+<li>转换成方块图形式</li>
+<li>将框图在simulink中对应模块实现</li>
+<li>设置相应模块的参数</li>
+<li>设置仿真运行参数</li>
+<li>开始仿真，分析曲线，解决实际问题</li>
+</ol>
+<h2 id="Ground-以及-Terminator-模块"><a href="#Ground-以及-Terminator-模块" class="headerlink" title="Ground 以及 Terminator 模块"></a>Ground 以及 Terminator 模块</h2><h3 id="Ground-输入接地模块"><a href="#Ground-输入接地模块" class="headerlink" title="Ground 输入接地模块"></a>Ground 输入接地模块</h3><p>用于接地输入模块未被连接的部分，发出零值信号。消除警告。且<strong>数据类型和输入相同</strong>  </p>
+<img src="./Ground.png" alt="图片alt" title="Ground" >
+
+<h3 id="Terminator-输出终端模块"><a href="#Terminator-输出终端模块" class="headerlink" title="Terminator 输出终端模块"></a>Terminator 输出终端模块</h3><p>用于输出的终端模块，多用于多维度输出下的端口连接。  </p>
+<img src="./Terminator.png" alt="图片alt" title="Terminator" >
+
+<h2 id="Constant-以及-加减乘除-模块"><a href="#Constant-以及-加减乘除-模块" class="headerlink" title="Constant 以及 加减乘除 模块"></a>Constant 以及 加减乘除 模块</h2><h3 id="Constant-常量模块"><a href="#Constant-常量模块" class="headerlink" title="Constant 常量模块"></a>Constant 常量模块</h3><p>可以产生实数常量，负数常量，向量常量，矩阵常量，<em>在matlab中，向量和矩阵的运算规则不同。</em>  </p>
+<img src="./乘法模式.png" alt="图片alt" title="乘法模式" >
+
+<p><strong>Element-wise</strong> 元素运算<br><strong>Matrix</strong>  矩阵运算</p>
+<h2 id="总线以及示波器-模块"><a href="#总线以及示波器-模块" class="headerlink" title="总线以及示波器 模块"></a>总线以及示波器 模块</h2><h3 id="总线Bus-模块"><a href="#总线Bus-模块" class="headerlink" title="总线Bus 模块"></a>总线Bus 模块</h3><p>可以产生实数常量，负数常量，向量常量，矩阵常量，<em>在matlab中，向量和矩阵的运算规则不同。</em>  </p>
+<img src="./Bus_sample.png" alt="图片alt" title="Bus_sample" >
+
+<h3 id="示波器-模块"><a href="#示波器-模块" class="headerlink" title="示波器 模块"></a>示波器 模块</h3><p>掌握基本使用方式即可，一般和<strong>总线</strong>一起使用显示多路信号</p>
+<img src="./示波器.png" alt="图片alt" title="示波器" >
+
+<h2 id="复用器和分路器模块"><a href="#复用器和分路器模块" class="headerlink" title="复用器和分路器模块"></a>复用器和分路器模块</h2><img src="./复用器和分路器.png" alt="图片alt" title="复用器和分路器" >
+
+<img src="./复用器和分路器1.png" alt="图片alt" title="复用器和分路器实例" >
+
+<h2 id="开关模块和增益模块"><a href="#开关模块和增益模块" class="headerlink" title="开关模块和增益模块"></a>开关模块和增益模块</h2><img src="./开关和增益.png" alt="图片alt" title="开关和增益" >
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/" data-id="cle9xt62k0001acvibvrf9r73" data-title="Simulink仿真与建模学习" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python学习/excel操作/excel_study" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excel%E6%93%8D%E4%BD%9C/excel_study/" class="article-date">
   <time class="dt-published" datetime="2023-02-15T11:58:10.312Z" itemprop="datePublished">2023-02-15</time>
 </a>
     
@@ -85,7 +169,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excelc%E6%93%8D%E4%BD%9C/excel_study/">Python-Excel操作学习</a>
+      <a class="p-name article-title" href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excel%E6%93%8D%E4%BD%9C/excel_study/">Python-Excel操作学习</a>
     </h1>
   
 
@@ -131,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/15/python%E5%AD%A6%E4%B9%A0/excelc%E6%93%8D%E4%BD%9C/excel_study/" data-id="cle5mnrf60000vwvidxrre1mx" data-title="Python-Excel操作学习" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/15/python%E5%AD%A6%E4%B9%A0/excel%E6%93%8D%E4%BD%9C/excel_study/" data-id="cle9xt6270000acvi7ltugdqu" data-title="Python-Excel操作学习" class="article-share-link">Share</a>
       
       
       
@@ -431,7 +515,11 @@
       <ul>
         
           <li>
-            <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excelc%E6%93%8D%E4%BD%9C/excel_study/">Python-Excel操作学习</a>
+            <a href="/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/">Simulink仿真与建模学习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excel%E6%93%8D%E4%BD%9C/excel_study/">Python-Excel操作学习</a>
           </li>
         
           <li>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Simulink仿真与建模学习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="编辑时间列表    Num Time author Notes    1 2023.2.18 安健 None   建模与仿真的流程 分析数学模型 转换成方块图形式 将框图在simulink中对应模块实现 设置相应模块的参数 设置仿真运行参数 开始仿真，分析曲线，解决实际问题  Ground 以及 Terminator 模块Ground 输入接地模块用于接地输入模块未被连接的部分，发出零值信号。消除">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simulink仿真与建模学习">
+<meta property="og:url" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="编辑时间列表    Num Time author Notes    1 2023.2.18 安健 None   建模与仿真的流程 分析数学模型 转换成方块图形式 将框图在simulink中对应模块实现 设置相应模块的参数 设置仿真运行参数 开始仿真，分析曲线，解决实际问题  Ground 以及 Terminator 模块Ground 输入接地模块用于接地输入模块未被连接的部分，发出零值信号。消除">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/Ground.png">
+<meta property="og:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/Terminator.png">
+<meta property="og:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/%E4%B9%98%E6%B3%95%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/Bus_sample.png">
+<meta property="og:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/%E7%A4%BA%E6%B3%A2%E5%99%A8.png">
+<meta property="og:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/%E5%A4%8D%E7%94%A8%E5%99%A8%E5%92%8C%E5%88%86%E8%B7%AF%E5%99%A8.png">
+<meta property="og:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/%E5%A4%8D%E7%94%A8%E5%99%A8%E5%92%8C%E5%88%86%E8%B7%AF%E5%99%A81.png">
+<meta property="og:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/%E5%BC%80%E5%85%B3%E5%92%8C%E5%A2%9E%E7%9B%8A.png">
+<meta property="article:published_time" content="2023-02-18T07:18:54.609Z">
+<meta property="article:modified_time" content="2023-02-18T12:27:32.900Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/Ground.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Matlab_study/Smulink建模与仿真/Simulink" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/" class="article-date">
+  <time class="dt-published" datetime="2023-02-18T07:18:54.609Z" itemprop="datePublished">2023-02-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Simulink仿真与建模学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><em><strong>编辑时间列表</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>Time</th>
+<th>author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2023.2.18</td>
+<td>安健</td>
+<td>None</td>
+</tr>
+</tbody></table>
+<h2 id="建模与仿真的流程"><a href="#建模与仿真的流程" class="headerlink" title="建模与仿真的流程"></a>建模与仿真的流程</h2><ol>
+<li>分析数学模型</li>
+<li>转换成方块图形式</li>
+<li>将框图在simulink中对应模块实现</li>
+<li>设置相应模块的参数</li>
+<li>设置仿真运行参数</li>
+<li>开始仿真，分析曲线，解决实际问题</li>
+</ol>
+<h2 id="Ground-以及-Terminator-模块"><a href="#Ground-以及-Terminator-模块" class="headerlink" title="Ground 以及 Terminator 模块"></a>Ground 以及 Terminator 模块</h2><h3 id="Ground-输入接地模块"><a href="#Ground-输入接地模块" class="headerlink" title="Ground 输入接地模块"></a>Ground 输入接地模块</h3><p>用于接地输入模块未被连接的部分，发出零值信号。消除警告。且<strong>数据类型和输入相同</strong>  </p>
+<img src="./Ground.png" alt="图片alt" title="Ground" >
+
+<h3 id="Terminator-输出终端模块"><a href="#Terminator-输出终端模块" class="headerlink" title="Terminator 输出终端模块"></a>Terminator 输出终端模块</h3><p>用于输出的终端模块，多用于多维度输出下的端口连接。  </p>
+<img src="./Terminator.png" alt="图片alt" title="Terminator" >
+
+<h2 id="Constant-以及-加减乘除-模块"><a href="#Constant-以及-加减乘除-模块" class="headerlink" title="Constant 以及 加减乘除 模块"></a>Constant 以及 加减乘除 模块</h2><h3 id="Constant-常量模块"><a href="#Constant-常量模块" class="headerlink" title="Constant 常量模块"></a>Constant 常量模块</h3><p>可以产生实数常量，负数常量，向量常量，矩阵常量，<em>在matlab中，向量和矩阵的运算规则不同。</em>  </p>
+<img src="./乘法模式.png" alt="图片alt" title="乘法模式" >
+
+<p><strong>Element-wise</strong> 元素运算<br><strong>Matrix</strong>  矩阵运算</p>
+<h2 id="总线以及示波器-模块"><a href="#总线以及示波器-模块" class="headerlink" title="总线以及示波器 模块"></a>总线以及示波器 模块</h2><h3 id="总线Bus-模块"><a href="#总线Bus-模块" class="headerlink" title="总线Bus 模块"></a>总线Bus 模块</h3><p>可以产生实数常量，负数常量，向量常量，矩阵常量，<em>在matlab中，向量和矩阵的运算规则不同。</em>  </p>
+<img src="./Bus_sample.png" alt="图片alt" title="Bus_sample" >
+
+<h3 id="示波器-模块"><a href="#示波器-模块" class="headerlink" title="示波器 模块"></a>示波器 模块</h3><p>掌握基本使用方式即可，一般和<strong>总线</strong>一起使用显示多路信号</p>
+<img src="./示波器.png" alt="图片alt" title="示波器" >
+
+<h2 id="复用器和分路器模块"><a href="#复用器和分路器模块" class="headerlink" title="复用器和分路器模块"></a>复用器和分路器模块</h2><img src="./复用器和分路器.png" alt="图片alt" title="复用器和分路器" >
+
+<img src="./复用器和分路器1.png" alt="图片alt" title="复用器和分路器实例" >
+
+<h2 id="开关模块和增益模块"><a href="#开关模块和增益模块" class="headerlink" title="开关模块和增益模块"></a>开关模块和增益模块</h2><img src="./开关和增益.png" alt="图片alt" title="开关和增益" >
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/" data-id="cle9xt62k0001acvibvrf9r73" data-title="Simulink仿真与建模学习" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excel%E6%93%8D%E4%BD%9C/excel_study/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python-Excel操作学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/">Simulink仿真与建模学习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excel%E6%93%8D%E4%BD%9C/excel_study/">Python-Excel操作学习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/word%E6%93%8D%E4%BD%9C/word/">Python-Word操作学习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/15/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/%E5%9B%BE%E5%83%8F%E5%8A%A0%E6%96%87%E6%9C%AC(python%E5%AE%9E%E7%8E%B0)/Add_Str_to%20Img/">图片添加文本</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/%E7%88%AC%E8%99%AB/Slenium_%E5%AD%A6%E4%B9%A0/Selenium/">Python-Selenium学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
