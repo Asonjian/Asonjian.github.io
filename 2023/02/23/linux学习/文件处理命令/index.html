@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>2.Linux文件处理命令 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="命令格式： 命令 [-选项] [参数]例： ls-la &#x2F;etc      说明   个别命令使用不遵循此格式 当有多个选项时，可以写在一起 简化选项与完整选项（-a 等于 –all）   2.1 目录处理命令1. ls目录处理命令:ls命令名称: ls命令英文原意: list命令所在路径: &#x2F;bin&#x2F;ls执行权限:所有用户功能描述:显示目录文件语法:ls 选项[-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.Linux文件处理命令">
+<meta property="og:url" content="http://example.com/2023/02/23/linux%E5%AD%A6%E4%B9%A0/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="命令格式： 命令 [-选项] [参数]例： ls-la &#x2F;etc      说明   个别命令使用不遵循此格式 当有多个选项时，可以写在一起 简化选项与完整选项（-a 等于 –all）   2.1 目录处理命令1. ls目录处理命令:ls命令名称: ls命令英文原意: list命令所在路径: &#x2F;bin&#x2F;ls执行权限:所有用户功能描述:显示目录文件语法:ls 选项[-">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://tiebapic.baidu.com/forum/w%3D580/sign=66f0dafe0e36acaf59e096f44cd88d03/f4cb072dd42a28349984afcc1eb5c9ea14cebf6e.jpg?tbpicau=2023-02-25-05_9848751951b0154f3501880bba6510c3">
+<meta property="og:image" content="http://tiebapic.baidu.com/forum/w%3D580/sign=ff7f10c9f43533faf5b6932698d1fdca/7383b2ef76c6a7ef28bc31e1b8faaf51f1de66f6.jpg?tbpicau=2023-02-25-05_67ede7e16c9cada09b9a9e3cb58e32cf">
+<meta property="og:image" content="http://tiebapic.baidu.com/forum/w%3D580/sign=706f08f80efbfbeddc59367748f2f78e/06d7f488d43f87948e02d1e9971b0ef419d53a8e.jpg?tbpicau=2023-02-25-05_af8707da0ecc918f51d72c8ad0d83a1d">
+<meta property="og:image" content="http://tiebapic.baidu.com/forum/w%3D580/sign=af31d1e9971b0ef46ce89856edc651a1/25a711fa828ba61ea32051e80434970a324e59b9.jpg?tbpicau=2023-02-25-05_c595dcfd6afefe6228f9acde8c5fed3b">
+<meta property="article:published_time" content="2023-02-23T05:38:27.134Z">
+<meta property="article:modified_time" content="2023-02-23T07:58:06.650Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://tiebapic.baidu.com/forum/w%3D580/sign=66f0dafe0e36acaf59e096f44cd88d03/f4cb072dd42a28349984afcc1eb5c9ea14cebf6e.jpg?tbpicau=2023-02-25-05_9848751951b0154f3501880bba6510c3">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-linux学习/文件处理命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/23/linux%E5%AD%A6%E4%B9%A0/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2023-02-23T05:38:27.134Z" itemprop="datePublished">2023-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      2.Linux文件处理命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>命令格式：</strong> 命令 [-选项] [参数]<br>例： ls-la &#x2F;etc   </p>
+</blockquote>
+<blockquote>
+<p><strong>说明</strong> </p>
+<ol>
+<li>个别命令使用不遵循此格式</li>
+<li>当有多个选项时，可以写在一起</li>
+<li>简化选项与完整选项（-a 等于 –all）</li>
+</ol>
+</blockquote>
+<h1 id="2-1-目录处理命令"><a href="#2-1-目录处理命令" class="headerlink" title="2.1 目录处理命令"></a>2.1 目录处理命令</h1><h2 id="1-ls"><a href="#1-ls" class="headerlink" title="1. ls"></a>1. ls</h2><p><strong>目录处理命令</strong>:ls<br><strong>命令名称</strong>: ls<br><strong>命令英文原意</strong>: list<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;ls<br><strong>执行权限</strong>:所有用户<br><strong>功能描述</strong>:显示目录文件<br><strong>语法</strong>:ls 选项[-ald] [文件或目录]   </p>
+<pre><code>    -a 显示所有文件，包括隐藏文件   
+    -l 详细信息显示   
+    -d 查看目录属性   
+</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ls -d</span></span><br><span class="line">.</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -d /tmp</span></span><br><span class="line">/tmp</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -al</span></span><br><span class="line">总用量 80</span><br><span class="line">dr-xr-x---.  2 root root  4096 2月  23 17:14 .</span><br><span class="line">dr-xr-xr-x. 25 root root  4096 2月  23 18:55 ..</span><br><span class="line">-rw-------.  1 root root  1208 2月  21 18:14 anaconda-ks.cfg</span><br><span class="line">-rw-------.  1 root root   533 2月  22 17:26 .bash_history</span><br><span class="line">-rw-r--r--.  1 root root    18 5月  20 2009 .bash_logout</span><br><span class="line">-rw-r--r--.  1 root root   176 5月  20 2009 .bash_profile</span><br><span class="line">-rw-r--r--.  1 root root   176 9月  23 2004 .bashrc</span><br><span class="line">-rw-r--r--.  1 root root   100 9月  23 2004 .cshrc</span><br><span class="line">-rw-r--r--.  1 root root 25906 2月  21 18:14 install.log</span><br><span class="line">-rw-r--r--.  1 root root  7690 2月  21 18:13 install.log.syslog</span><br><span class="line">-rw-r--r--.  1 root root   129 12月  4 2004 .tcshrc</span><br><span class="line">-rw-------.  1 root root    67 2月  23 17:07 .Xauthority</span><br><span class="line">[root@localhost ~]<span class="comment">#</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>-rw-r–r–</strong></p>
+<ul>
+<li>文件类型 (- 二进制文件 d目录 1软链接文件)</li>
+<li>rW- I– I–</li>
+<li>u- g - o</li>
+<li>u所有者 g所属组 o其他人</li>
+<li>r读w写x执行</li>
+</ul>
+<h2 id="2-mkdir"><a href="#2-mkdir" class="headerlink" title="2.mkdir"></a>2.mkdir</h2><p><strong>命令名称</strong>: mkdir<br><strong>命令英文原意</strong>: make directories<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;kdir<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:mkdir-p[目录名]<br><strong>功能描述</strong>:创建新目录   </p>
+<ul>
+<li><pre><code>     -p 递归创建
+</code></pre>
+</li>
+</ul>
+<p><strong>范例</strong>:    </p>
+<ul>
+<li>$ mkdir -p &#x2F;tmp&#x2F;Japan&#x2F;boduo   </li>
+<li>$ mkdir &#x2F;tmp&#x2F;Japan&#x2F;longze &#x2F;tmp&#x2F;Japan&#x2F;cangjing</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ls /tmp</span></span><br><span class="line">install.log  Japan  yum.log</span><br><span class="line">[root@localhost ~]<span class="comment"># mkdir /tmp/Anjian</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp</span></span><br><span class="line">Anjian  install.log  Japan  yum.log</span><br><span class="line">[root@localhost ~]<span class="comment"># mkdir -p /tmp/Anjian/anjian1 /tmp/Anjian/anjian2 /tmp/Anjian/anjian3</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian</span></span><br><span class="line">anjian1  anjian2  anjian3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-cd"><a href="#3-cd" class="headerlink" title="3.cd"></a>3.cd</h2><p><strong>命令名称</strong>: cd<br><strong>命令英文原意</strong>:change directory<br><strong>命令所在路径</strong>: shell内置命令<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:cd[目录]<br><strong>功能描述</strong>:切换目录<br><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment">#</span></span><br><span class="line">[root@localhost ~]<span class="comment"># cd /tmp</span></span><br><span class="line">[root@localhost tmp]<span class="comment"># cd /tmp/Anjian</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-cd"><a href="#4-cd" class="headerlink" title="4.cd"></a>4.cd</h2><p><strong>命令名称</strong>: cd<br><strong>命令英文原意</strong>:print working directory<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;pwd<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:pwd<br><strong>功能描述</strong>:显示当前目录例<br><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment">#</span></span><br><span class="line">[root@localhost ~]<span class="comment"># cd /tmp</span></span><br><span class="line">[root@localhost tmp]<span class="comment"># cd /tmp/Anjian</span></span><br><span class="line">[root@localhost Anjian]<span class="comment"># pwd</span></span><br><span class="line">/tmp/Anjian</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="5-rmdir"><a href="#5-rmdir" class="headerlink" title="5.rmdir"></a>5.rmdir</h2><p><strong>命令名称</strong>: rmdir<br><strong>命令英文原意</strong>:remove empty directories<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;rmdir<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:rmdir[目录名]<br><strong>功能描述</strong>:删除空目录<br><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian</span></span><br><span class="line">anjian1  anjian2  anjian3</span><br><span class="line">[root@localhost Anjian]<span class="comment"># rmdir /tmp/Anjian/anjian1</span></span><br><span class="line">[root@localhost Anjian]<span class="comment"># ls</span></span><br><span class="line">anjian2  anjian3</span><br></pre></td></tr></table></figure>
+<h2 id="6-cp"><a href="#6-cp" class="headerlink" title="6.cp"></a>6.cp</h2><p><strong>命令名称</strong>: cp<br><strong>命令英文原意</strong>:copy<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;cp<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:rmdir[目录名]cp -rp [原文件或目录][目标目录]<br>.       -r 复制目录<br>.       -p 保留文件属性<br><strong>功能描述</strong>:复制文件或目录<br><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ls</span></span><br><span class="line">anaconda-ks.cfg  install.log  install.log.syslog</span><br><span class="line">[root@localhost ~]<span class="comment"># cp /root/install.log /tmp/Anjian/anjian2</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian/anjian2</span></span><br><span class="line">install.log</span><br><span class="line">[root@localhost ~]<span class="comment"># cp -r /tmp/Anjian/anjian2 /tmp/Anjian/anjian3</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian/anjian3</span></span><br><span class="line">anjian2</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l install.log</span></span><br><span class="line">-rw-r--r--. 1 root root 25906 2月  21 18:14 install.log</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l /tmp/Anjian/anjian2/install.log</span></span><br><span class="line">-rw-r--r--. 1 root root 25906 2月  23 20:18 /tmp/Anjian/anjian2/install.log</span><br><span class="line">[root@localhost ~]<span class="comment"># cp -p install.log /tmp/Anjian/anjian2</span></span><br><span class="line"><span class="built_in">cp</span>：是否覆盖<span class="string">&quot;/tmp/Anjian/anjian2/install.log&quot;</span>？ y</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l /tmp/Anjian/anjian2/install.log</span></span><br><span class="line">-rw-r--r--. 1 root root 25906 2月  21 18:14 /tmp/Anjian/anjian2/install.log</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="7-mv"><a href="#7-mv" class="headerlink" title="7.mv"></a>7.mv</h2><p><strong>命令名称</strong>: mv<br><strong>命令英文原意</strong>:move<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;mv<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:mv [原文件或目录] [目标目录]<br><strong>功能描述</strong>:剪切文件、改名<br><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian/anjian3</span></span><br><span class="line">anjian2</span><br><span class="line">[root@localhost ~]<span class="comment"># mv /tmp/Anjian/anjian3/anjian2 /tmp/Anjian/anjian3-2</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian</span></span><br><span class="line">anjian2  anjian3  anjian3-2</span><br><span class="line">[root@localhost ~]<span class="comment"># mv /tmp/Anjian/anjian3-2 /tmp/Anjian/anjian1</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian</span></span><br><span class="line">anjian1  anjian2  anjian3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="8-rm"><a href="#8-rm" class="headerlink" title="8.rm"></a>8.rm</h2><p><strong>命令名称</strong>: rm<br><strong>命令英文原意</strong>:remove<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;rm<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:rm -rf [文件或目录]<br>-r 删除目录<br>-f 强制执行<br><strong>功能描述</strong>:删除文件或目录<br><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian</span></span><br><span class="line">anjian1  anjian2  anjian3</span><br><span class="line">[root@localhost ~]<span class="comment"># rm /tmp/Anjian/anjian1</span></span><br><span class="line"><span class="built_in">rm</span>: 无法删除<span class="string">&quot;/tmp/Anjian/anjian1&quot;</span>: 是一个目录</span><br><span class="line">[root@localhost ~]<span class="comment"># rm /tmp/Anjian/anjian1/install.log</span></span><br><span class="line"><span class="built_in">rm</span>：是否删除普通文件 <span class="string">&quot;/tmp/Anjian/anjian1/install.log&quot;</span>？y</span><br><span class="line">[root@localhost ~]<span class="comment"># rm -r /tmp/Anjian/anjian1</span></span><br><span class="line"><span class="built_in">rm</span>：是否删除目录 <span class="string">&quot;/tmp/Anjian/anjian1&quot;</span>？y</span><br><span class="line">[root@localhost ~]<span class="comment"># rm -rf /tmp/Anjian/anjian3</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian</span></span><br><span class="line">anjian2</span><br></pre></td></tr></table></figure>
+<h1 id="2-2-文件处理命令"><a href="#2-2-文件处理命令" class="headerlink" title="2.2 文件处理命令"></a>2.2 文件处理命令</h1><h2 id="1-touch"><a href="#1-touch" class="headerlink" title="1.touch"></a>1.touch</h2><p><strong>命令名称</strong>: touch<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;touch<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:touch [文件名]<br><strong>功能描述</strong>:创建空文件  </p>
+<p><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ls</span></span><br><span class="line">anaconda-ks.cfg  anjian.log  install.log  install.log.syslog</span><br><span class="line">[root@localhost ~]<span class="comment">#</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2-cat"><a href="#2-cat" class="headerlink" title="2.cat"></a>2.cat</h2><p><strong>命令名称</strong>: cat<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;cat<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:cat [文件名]<br><strong>功能描述</strong>:显示文件内容 -n 显示行号</p>
+<p><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cat /etc/issue</span></span><br><span class="line">CentOS release 6.3 (Final)</span><br><span class="line">Kernel \r on an \m</span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># cat -n /etc/issue</span></span><br><span class="line">     1  CentOS release 6.3 (Final)</span><br><span class="line">     2  Kernel \r on an \m</span><br><span class="line">     3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="3-tac"><a href="#3-tac" class="headerlink" title="3.tac"></a>3.tac</h2><p><strong>命令名称</strong>: cat<br><strong>命令所在路径</strong>: &#x2F;usr&#x2F;&#x2F;bin&#x2F;tac<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:tac [文件名]<br><strong>功能描述</strong>:显示文件内容(反向显示)</p>
+<p><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># tac /etc/issue</span></span><br><span class="line"></span><br><span class="line">Kernel \r on an \m</span><br><span class="line">CentOS release 6.3 (Final)</span><br></pre></td></tr></table></figure>
+<h2 id="4-more"><a href="#4-more" class="headerlink" title="4.more"></a>4.more</h2><p><strong>命令名称</strong>: more<br><strong>命令所在路径</strong>: &#x2F;bin&#x2F;more<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:more [文件名]<br>(空格)或f    翻页<br>(Enter)      换行<br>q或Q  退出<br><strong>功能描述</strong>:分页显示文件内容</p>
+<p><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># more /etc/services</span></span><br><span class="line"><span class="comment"># /etc/services:</span></span><br><span class="line"><span class="comment"># $Id: services,v 1.48 2009/11/11 14:32:31 ovasik Exp $</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Network services, Internet style</span></span><br><span class="line"><span class="comment"># IANA services version: last updated 2009-11-10</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Note that it is presently the policy of IANA to assign a single well-known</span></span><br><span class="line"><span class="comment"># port number for both TCP and UDP; hence, most entries here have two entries</span></span><br><span class="line"><span class="comment"># even if the protocol doesn&#x27;t support UDP operations.</span></span><br><span class="line"><span class="comment"># Updated from RFC 1700, ``Assigned Numbers&#x27;&#x27; (October 1994).  Not all ports</span></span><br><span class="line"><span class="comment"># are included, only the more common ones.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The latest IANA port assignments can be gotten from</span></span><br><span class="line"><span class="comment">#       http://www.iana.org/assignments/port-numbers</span></span><br><span class="line"><span class="comment"># The Well Known Ports are those from 0 through 1023.</span></span><br><span class="line"><span class="comment"># The Registered Ports are those from 1024 through 49151</span></span><br><span class="line"><span class="comment"># The Dynamic and/or Private Ports are those from 49152 through 65535</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Each line describes one service, and is of the form:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># service-name  port/protocol  [aliases ...]   [# comment]</span></span><br><span class="line"></span><br><span class="line">tcpmux          1/tcp                           <span class="comment"># TCP port service multiplexer</span></span><br><span class="line">tcpmux          1/udp                           <span class="comment"># TCP port service multiplexer</span></span><br><span class="line">rje             5/tcp                           <span class="comment"># Remote Job Entry</span></span><br><span class="line">rje             5/udp                           <span class="comment"># Remote Job Entry</span></span><br><span class="line"><span class="built_in">echo</span>            7/tcp</span><br><span class="line"><span class="comment"># 24 - private mail system</span></span><br><span class="line">lmtp            24/tcp                          <span class="comment"># LMTP Mail Delivery</span></span><br><span class="line">--More--(0%)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="5-less"><a href="#5-less" class="headerlink" title="5.less"></a>5.less</h2><p><strong>命令名称</strong>: less<br><strong>命令所在路径</strong>:  &#x2F;usr&#x2F;bin&#x2F;less<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:less [文件名]<br><strong>功能描述</strong>:分页显示文件内容(可向上翻页)</p>
+<p><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># less /ect/services</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://tiebapic.baidu.com/forum/w%3D580/sign=66f0dafe0e36acaf59e096f44cd88d03/f4cb072dd42a28349984afcc1eb5c9ea14cebf6e.jpg?tbpicau=2023-02-25-05_9848751951b0154f3501880bba6510c3" alt="less"></p>
+<h2 id="6-head"><a href="#6-head" class="headerlink" title="6.head"></a>6.head</h2><p><strong>命令名称</strong>: head<br><strong>命令所在路径</strong>:  &#x2F;usr&#x2F;bin&#x2F;head<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:head [文件名]<br><strong>功能描述</strong>:显示文件前面几行<br>-n 指定行数</p>
+<p><strong>范例</strong>:    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># head -n 20 /etc/services</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://tiebapic.baidu.com/forum/w%3D580/sign=ff7f10c9f43533faf5b6932698d1fdca/7383b2ef76c6a7ef28bc31e1b8faaf51f1de66f6.jpg?tbpicau=2023-02-25-05_67ede7e16c9cada09b9a9e3cb58e32cf" alt="head"></p>
+<h2 id="6-tail"><a href="#6-tail" class="headerlink" title="6.tail"></a>6.tail</h2><p><strong>命令名称</strong>: head<br><strong>命令所在路径</strong>:  &#x2F;usr&#x2F;bin&#x2F;tail<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:tail [文件名]<br><strong>功能描述</strong>:显示文件后面几行<br>-n 指定行数<br>-f 动态显示文件末尾内容</p>
+<p><strong>范例</strong>:    $ tail -n 18 &#x2F;etc&#x2F;services</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># tail -n 18 /etc/services</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://tiebapic.baidu.com/forum/w%3D580/sign=706f08f80efbfbeddc59367748f2f78e/06d7f488d43f87948e02d1e9971b0ef419d53a8e.jpg?tbpicau=2023-02-25-05_af8707da0ecc918f51d72c8ad0d83a1d" alt="tail"></p>
+<h2 id="7-ln"><a href="#7-ln" class="headerlink" title="7.ln"></a>7.ln</h2><p><strong>命令名称</strong>: ln<br><strong>命令所在路径</strong>:  &#x2F;bin&#x2F;lin<br><strong>执行权限</strong>:所有用户<br><strong>语法</strong>:ln -s [原文件] [目标文件]<br>-s 创建软链接<br><strong>功能描述</strong>:生成链接文件<br><strong>软链接特征</strong>:类似Windows快捷方式<br>l lrwxrwxrwx  l软链接、软链接文件权限都为rwxrwxrwx<br>2、文件大小-只是符号链接<br>3、&#x2F;tmp&#x2F;issue.soft -&gt; &#x2F;etc&#x2F;issue<br>箭头指向源文件<br><strong>硬链接特征</strong>:</p>
+<ol>
+<li>拷贝cp-p + 同步更新  echo“<a target="_blank" rel="noopener" href="http://www.lampbrother.net">>">www.lampbrother.net&quot;&gt;&gt;</a> &#x2F;etc&#x2F;issue  </li>
+<li>通过i节点识别  </li>
+<li>不能跨分区  </li>
+<li>不能针对目录使用<br><strong>范例</strong>:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ln install.log /tmp/Anjian/install.soft</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian</span></span><br><span class="line">anjian2  install.soft</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l /tmp/Anjian/install.soft</span></span><br><span class="line">-rw-r--r--. 2 root root 25906 2月  21 18:14 /tmp/Anjian/install.soft</span><br><span class="line">[root@localhost ~]<span class="comment"># rm rf /tmp/Anjian/install.soft</span></span><br><span class="line"><span class="built_in">rm</span>: 无法删除<span class="string">&quot;rf&quot;</span>: 没有那个文件或目录</span><br><span class="line"><span class="built_in">rm</span>：是否删除普通文件 <span class="string">&quot;/tmp/Anjian/install.soft&quot;</span>？y</span><br><span class="line">[root@localhost ~]<span class="comment"># ln -s install.log /tmp/Anjian/install.soft</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls /tmp/Anjian</span></span><br><span class="line">anjian2  install.soft</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l /tmp/Anjian/install.soft</span></span><br><span class="line">lrwxrwxrwx. 1 root root 11 2月  23 21:50 /tmp/Anjian/install.soft -&gt; install.log</span><br><span class="line">[root@localhost ~]<span class="comment"># ls install.log</span></span><br><span class="line">install.log</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l install.log</span></span><br><span class="line">-rw-r--r--. 1 root root 25906 2月  21 18:14 install.log</span><br><span class="line">[root@localhost ~]<span class="comment"># ln install.log /tmp/Anjian/install.hard</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l /tmp/Anjian/install.hard</span></span><br><span class="line">-rw-r--r--. 2 root root 25906 2月  21 18:14 /tmp/Anjian/install.hard</span><br><span class="line">[root@localhost ~]<span class="comment"># ls -l install.log</span></span><br><span class="line">-rw-r--r--. 2 root root 25906 2月  21 18:14 install.log</span><br><span class="line">[root@localhost ~]<span class="comment">#</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<img src="http://tiebapic.baidu.com/forum/w%3D580/sign=af31d1e9971b0ef46ce89856edc651a1/25a711fa828ba61ea32051e80434970a324e59b9.jpg?tbpicau=2023-02-25-05_c595dcfd6afefe6228f9acde8c5fed3b" alt="ln"></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/23/linux%E5%AD%A6%E4%B9%A0/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/" data-id="clegtbbis0000h8vi7wria9uz" data-title="2.Linux文件处理命令" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/02/20/linux%E5%AD%A6%E4%B9%A0/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux系统分区</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/23/linux%E5%AD%A6%E4%B9%A0/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/">2.Linux文件处理命令</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/20/linux%E5%AD%A6%E4%B9%A0/%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/">Linux系统分区</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/18/Matlab_study/Smulink%E5%BB%BA%E6%A8%A1%E4%B8%8E%E4%BB%BF%E7%9C%9F/Simulink/">Simulink仿真与建模学习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/excel%E6%93%8D%E4%BD%9C/excel_study/">Python-Excel操作学习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/15/python%E5%AD%A6%E4%B9%A0/word%E6%93%8D%E4%BD%9C/word/">Python-Word操作学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
